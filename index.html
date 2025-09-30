@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Bot - Home</title>
+<style>
+  body { font-family:'Poppins',sans-serif; margin:0; background:#e3f2fd; color:#0d47a1; }
+  header { background:#1976d2; color:#fff; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; }
+  header h1 { font-size:24px; }
+  nav a { color:#fff; margin:0 12px; text-decoration:none; font-weight:500; transition:0.3s; }
+  nav a:hover { text-decoration:underline; }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(25,118,210,0.8), rgba(25,118,210,0.8)),
+                url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+  .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+  .hero button { background:#64b5f6; border:none; padding:12px 25px; font-size:1rem; border-radius:8px; cursor:pointer; transition:0.3s; color:#0d47a1; font-weight:bold; }
+  .hero button:hover { background:#bbdefb; }
+
+  /* Cards Section */
+  .features {
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin:50px auto;
+    flex-wrap:wrap;
+    max-width:1000px;
+  }
+  .card {
+    background:#bbdefb;
+    padding:25px;
+    border-radius:12px;
+    width:250px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+  }
+  .card:hover { transform:translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
+  .card img { width:60px; margin-bottom:15px; }
+
+  footer { text-align:center; padding:15px; background:#1976d2; color:#fff; border-radius:0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>College Bot</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="login.html">Login</a>
+    <a href="sentiment.html">Sentiment</a>
+    <a href="text.html">Text to Speech</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Smart Assistant for College Life</h2>
+  <p>Get instant help with courses, events, hostels, and campus info!</p>
+  <button onclick="window.location.href='about.html'">Learn More</button>
+</section>
+
+<main>
+  <div class="features">
+    <div class="card">
+      <img src="https://img.icons8.com/emoji/96/000000/robot-emoji.png" alt="Bot">
+      <h3>AI-Powered Bot</h3>
+      <p>Friendly assistant for all your college queries.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/96/000000/open-book.png" alt="Courses">
+      <h3>Courses Info</h3>
+      <p>Details for B.Tech, M.Tech, and other programs.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/96/000000/calendar.png" alt="Events">
+      <h3>Events & Hostel</h3>
+      <p>Stay updated with college events and hostel info.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 College Bot. All rights reserved.</p>
+</footer><script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "1a919de5-ed47-4820-8584-bf89535443c3", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "6f398c8d-1330-4791-8a19-28fc2c9e03a0", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+<!-- Watson Chatbot Embed -->
+
+</body>
+</html>
